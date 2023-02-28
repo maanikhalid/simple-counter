@@ -1,38 +1,47 @@
-<!DOCTYPE  html>
+<!DOCTYPE html>
 <html>
-    <head>
-      <link rel="stylesheet" href="./style.css" />
-    </head>
-    <body>
-
-      <!-- Simple Counter Container -->
-      <div class="container">
-        <div>
-        <div class="banner"><img src="https://media.wired.co.uk/photos/606d9d10ef15037f588534c1/4:3/w_3768,h_2826,c_limit/londonunderground.jpg"/></div>
-        <div class="content">
-          <h3>People Counter</h3>
-          <p id="countP"></p>
-
-          <button onclick="counter()">Count</button>
-          <button onclick="saveCounter()">Save</button>
-          <button onclick="resetCounter()">Reset</button>
-          <button onclick="clearHistory()">Clear History</button>
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <title>A Simple Javascript Counter</title>
+    <meta name="viewport" 
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+<body>
+    <div class="container">
+        <div class="wrapper">
+            
+            <div class="counter-holder">
+                <div class="banner"><img src="https://media.wired.co.uk/photos/606d9d10ef15037f588534c1/4:3/w_3768,h_2826,c_limit/londonunderground.jpg" /></div>
+                
+                <div class="subtext">How many people are boarding the train</div>
+                <div class="count" id="countP">
+                0</div>
+            </div>
+            
+            <div class="button-wrapper">
+                <ul>
+                    <li><button class="countbtn" onclick="countPeople()">Count</button></li>
+                    <li><button class="savebtn" onclick="savePeople()">Save</button></li>
+                    <li><button class="resetbtn" onclick="resetPeople()">Reset</button></li>
+                    
+                </ul>
+            </div>
+            
+            <div class="spacer"></div>
+            
+            <div class="result-container">
+                <div class="result-header">         <h2>Saved results</h2>
+                    <button class="clear" onclick="clearHistory()">Clear history</button>
+                </div>
+                <ul class="results"  id="savedtab">
+                
+                
+                   
+                
+                </ul>
+            </div>
         </div>
-        <div class="results">
-          <h4>History Results</h4>
-          <p id="clearCount"></p>
-          <ul id="saveCount">
-            <li></li>
-            </ul>
-        </div>
-      </div>
-</div>
-
-
-      <!-- Simple Counter JS -->
-      <script type="text/javascript" src="./counter_script.js"> </script>
-
-
-
-    </body>
+    </div>
+    <script src="counter_script.js"></script>
+</body>
 </html>

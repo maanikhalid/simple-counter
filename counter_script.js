@@ -1,31 +1,32 @@
-let countP  = document.getElementById("countP");
-let saveCount = document.getElementById("saveCount");
-let startText = "How many people are boarding the train?";
-let clearCount = document.getElementById("clearCount");
-countP.textContent = startText;
 
-let peopleCount = 0;
+let savecount = document.getElementById("savedtab");
 
-function counter() {
-  peopleCount += 1;
-  countP.textContent = "You currently have " + peopleCount + " on the train";
-  clearCount.textContent = "";
+const count = document.getElementById("countP");
+const historyElement = document.getElementById("savedtab");
+
+let countP = 0;
+let history = [];
+
+function countPeople() {
+    countP ++;
+    count.innerHTML = countP;
 }
 
-function saveCounter(){
-  saveCount.innerHTML += "<li>You had " + peopleCount + " on the train</li>";
-
-  peopleCount = 0;
-  countP.textContent = startText;
+function resetPeople() {
+    countP = 0;
+    count.innerHTML = countP;
 }
 
-function resetCounter(){
-  peopleCount = 0;
-  countP.textContent = "You currently have " + peopleCount + " on the train";
+function savePeople() {
+    history.push(countP);
+    const newHistoryItem = document.createElement("li");
+    newHistoryItem.innerText = "You had " + countP + " people on the train";
+    historyElement.appendChild(newHistoryItem);
+    countP = 0;
+    count.innerHTML = countP;
 }
 
-
-function clearHistory(){
-  clearCount.textContent = "Cleared results";
-  saveCount.textContent = "";
-} 
+function clearHistory() {
+    history = [];
+    historyElement.innerHTML = "";
+}
