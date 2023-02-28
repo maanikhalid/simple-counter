@@ -1,15 +1,15 @@
-let countP  = document.getElementById('countP');
-let saveCount = document.getElementById('saveCount');
+let countP  = document.getElementById("countP");
+let saveCount = document.getElementById("saveCount");
 let startText = "How many people are boarding the train?";
-let clearCount = document.getElementById('clearCount');
+let clearCount = document.getElementById("clearCount");
 countP.textContent = startText;
 
-let peopleCount = 0
+let peopleCount = 0;
 
-function  counter() {
+function counter() {
   peopleCount += 1;
   countP.textContent = "You currently have " + peopleCount + " on the train";
-  clearCount.textContent = ""
+  clearCount.textContent = "";
 }
 
 function saveCounter(){
@@ -24,7 +24,8 @@ function resetCounter(){
   countP.textContent = "You currently have " + peopleCount + " on the train";
 }
 
+
 function clearHistory(){
-  clearCount.textContent = "Cleared results"
-  saveCount.textContent = ""
-}
+  clearCount.textContent = "Cleared results";
+  saveCount.textContent = "";
+} 
